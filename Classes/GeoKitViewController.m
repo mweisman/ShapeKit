@@ -49,9 +49,14 @@
     } else {
         NSLog(@"NO");
     }
-
+    
+    GeoKitPolyline *line = [[GeoKitPolyline alloc] initWithWKT:@"LINESTRING(0 0, 10 10, 2 2, 4 4, 3 3, 4 5)"];
+    [theMap addOverlay:line.geometry];
+    
+    
     [myPoint release];
     [polygon release];
+    [line release];
 }
 
 
@@ -79,6 +84,28 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark MapView Delegate methods
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineView *polylineView = [[[MKPolylineView alloc] initWithOverlay:overlay] autorelease];
+        polylineView.strokeColor = [UIColor redColor];
+        polylineView.lineWidth = 5.0;
+
+        return polylineView;
+        
+    } else if ([overlay isKindOfClass:[MKPolygon class]]) {
+        MKPolygonView *polygonView = [[[MKPolygonView alloc] initWithOverlay:overlay] autorelease];
+        polygonView.strokeColor = [UIColor redColor];
+        polygonView.lineWidth = 5.0;
+        
+        return polygonView;
+    }
+	
+	return nil;
 }
 
 @end

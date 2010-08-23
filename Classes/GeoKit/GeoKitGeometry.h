@@ -42,3 +42,12 @@ void log_and_exit(const char *fmt,...);
 
 @end
 
+@interface GeoKitPolyline : GeoKitGeometry
+{
+    MKPolyline *geometry;
+    unsigned int numberOfCoords;
+}
+@property (nonatomic,retain) MKPolyline *geometry;
+@property (nonatomic) unsigned int numberOfCoords;
+
+@end

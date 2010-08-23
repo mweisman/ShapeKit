@@ -109,3 +109,31 @@ void log_and_exit(const char *fmt,...) {
 }
 
 @end
+
+#pragma mark -
+
+@implementation GeoKitPolyline
+@synthesize geometry,numberOfCoords;
+
+-(id)initWithWKT:(NSString *) wkt {
+    [super initWithWKT:wkt];
+    GEOSCoordSequence *sequence = GEOSCoordSeq_clone(GEOSGeom_getCoordSeq(geosGeom));
+    GEOSCoordSeq_getSize(sequence, &numberOfCoords);
+    CLLocationCoordinate2D coords[numberOfCoords];
+    
+    for (int coord = 0; coord < numberOfCoords; coord++) {
+        double xCoord = NULL;
+        GEOSCoordSeq_getX(sequence, coord, &xCoord);
+        
+        double yCoord = NULL;
+        GEOSCoordSeq_getY(sequence, coord, &yCoord);
+        coords[coord] = CLLocationCoordinate2DMake(yCoord, xCoord);
+    }
+    geometry = [MKPolyline polylineWithCoordinates:coords count:numberOfCoords];
+
+    GEOSCoordSeq_destroy(sequence);
+    
+    return self;
+}
+
+@end
