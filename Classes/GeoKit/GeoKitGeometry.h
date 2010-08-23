@@ -26,6 +26,7 @@
 @property (nonatomic) GEOSGeometry *geosGeom;
 
 -(id)initWithWKT:(NSString *) wkt;
+-(id)initWithGeosGeometry:(GEOSGeometry *)geom;
 -(BOOL)contains:(GeoKitGeometry *)compareGeometry;
 void notice(const char *fmt,...);
 void log_and_exit(const char *fmt,...);
@@ -48,6 +49,16 @@ void log_and_exit(const char *fmt,...);
     unsigned int numberOfCoords;
 }
 @property (nonatomic,retain) MKPolyline *geometry;
+@property (nonatomic) unsigned int numberOfCoords;
+
+@end
+
+@interface GeoKitPolygon : GeoKitGeometry
+{
+    MKPolygon *geometry;
+    unsigned int numberOfCoords;
+}
+@property (nonatomic,retain) MKPolygon *geometry;
 @property (nonatomic) unsigned int numberOfCoords;
 
 @end

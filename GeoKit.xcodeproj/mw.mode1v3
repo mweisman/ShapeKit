@@ -270,7 +270,48 @@
 		</dict>
 	</array>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>CE1B9CCB122214B400535C60</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>geos_c.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>CE1B9CCC122214B400535C60</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>geos_c.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>CE1B9D0E1222189400535C60</string>
+						<key>history</key>
+						<array>
+							<string>CE1B9CCF122214B400535C60</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1191, 567}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>19 165 1191 608 0 0 1280 778 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -349,8 +390,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
-									<integer>2</integer>
+									<integer>8</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -393,7 +433,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>GeoKitGeometry.mm</string>
+								<string>GeoKitViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -401,19 +441,19 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>GeoKitGeometry.mm</string>
+										<string>GeoKitViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CEFACEC0122210D200EF6D5A</string>
+										<string>CE1B9D0D1222189400535C60</string>
 										<key>history</key>
 										<array>
 											<string>CEAD73981221098F0045AF2C</string>
 											<string>CEAD782D1221E3180045AF2C</string>
-											<string>CEFACE341222093600EF6D5A</string>
 											<string>CEFACE361222093600EF6D5A</string>
-											<string>CEFACEB71222104800EF6D5A</string>
-											<string>CEFACEB81222104800EF6D5A</string>
+											<string>CE1B9D0A1222189400535C60</string>
+											<string>CE1B9D0B1222189400535C60</string>
+											<string>CE1B9D0C1222189400535C60</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -425,14 +465,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {932, 613}}</string>
+								<string>{{0, 0}, {932, 609}}</string>
 								<key>RubberWindowFrame</key>
 								<string>4 55 1276 723 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>613pt</string>
+							<string>609pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -445,14 +485,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 618}, {932, 64}}</string>
+								<string>{{0, 614}, {932, 68}}</string>
 								<key>RubberWindowFrame</key>
 								<string>4 55 1276 723 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>64pt</string>
+							<string>68pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -471,9 +511,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CEFACE391222093600EF6D5A</string>
+				<string>CE1B9D021222169C00535C60</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CEFACE3A1222093600EF6D5A</string>
+				<string>CE1B9D031222169C00535C60</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -594,7 +634,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>304222418.87137997</real>
+	<real>304224404.89411002</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -611,12 +651,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CEFACE4E1222098500EF6D5A</string>
-		<string>CEFACE441222093600EF6D5A</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>CE1B9CCB122214B400535C60</string>
 		<string>CEAD6EAC1220B19D0045AF2C</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mw/Desktop/GeoKit/GeoKit.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1276 723 0 0 1280 778 </string>
@@ -640,7 +679,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>GeoKitGeometry.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -698,7 +737,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CEAD6EAC1220B19D0045AF2C</string>
-				<string>CEFACE3B1222093600EF6D5A</string>
+				<string>CE1B9CDC122214DA00535C60</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -742,8 +781,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {463, 286}}</string>
-											<string>{{463, 0}, {553, 286}}</string>
+											<string>{{0, 0}, {463, 290}}</string>
+											<string>{{463, 0}, {553, 290}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -758,8 +797,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {1016, 286}}</string>
-											<string>{{0, 286}, {1016, 261}}</string>
+											<string>{{0, 0}, {1016, 290}}</string>
+											<string>{{0, 290}, {1016, 257}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -792,7 +831,7 @@
 										<real>253</real>
 									</array>
 									<key>Frame</key>
-									<string>{{463, 0}, {553, 286}}</string>
+									<string>{{463, 0}, {553, 290}}</string>
 									<key>RubberWindowFrame</key>
 									<string>169 160 1016 588 0 0 1280 778 </string>
 								</dict>
@@ -820,13 +859,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>CEFACE3C1222093600EF6D5A</string>
+				<string>CE1B9CDD122214DA00535C60</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>CEFACE3D1222093600EF6D5A</string>
-				<string>CEFACE3E1222093600EF6D5A</string>
-				<string>CEFACE3F1222093600EF6D5A</string>
-				<string>CEFACE401222093600EF6D5A</string>
-				<string>CEFACE411222093600EF6D5A</string>
+				<string>CE1B9CDE122214DA00535C60</string>
+				<string>CE1B9CDF122214DA00535C60</string>
+				<string>CE1B9CE0122214DA00535C60</string>
+				<string>CE1B9CE1122214DA00535C60</string>
+				<string>CE1B9CE2122214DA00535C60</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -990,7 +1029,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>CEFACE421222093600EF6D5A</string>
+				<string>CE1B9D051222169C00535C60</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

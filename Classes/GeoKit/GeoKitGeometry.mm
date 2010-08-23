@@ -38,6 +38,14 @@
     return self;
 }
 
+-(id)initWithGeosGeometry:(GEOSGeometry *)geom {
+    geosGeom = geom;
+    self.geomType = [NSString stringWithUTF8String:GEOSGeomType(geosGeom)];
+    self.wktGeom = [NSString stringWithUTF8String:GEOSGeomToWKT(geosGeom)];
+    
+    return self;    
+}
+
 
 - (void) dealloc
 {
@@ -131,6 +139,55 @@ void log_and_exit(const char *fmt,...) {
     }
     geometry = [MKPolyline polylineWithCoordinates:coords count:numberOfCoords];
 
+    GEOSCoordSeq_destroy(sequence);
+    
+    return self;
+}
+
+@end
+
+#pragma mark -
+
+@implementation GeoKitPolygon
+@synthesize geometry,numberOfCoords;
+
+-(id)initWithWKT:(NSString *) wkt {
+    [super initWithWKT:wkt];
+    GEOSCoordSequence *sequence = GEOSCoordSeq_clone(GEOSGeom_getCoordSeq(GEOSGetExteriorRing(geosGeom)));
+    GEOSCoordSeq_getSize(sequence, &numberOfCoords);
+    CLLocationCoordinate2D coords[numberOfCoords];
+    
+    for (int coord = 0; coord < numberOfCoords; coord++) {
+        double xCoord = NULL;
+        GEOSCoordSeq_getX(sequence, coord, &xCoord);
+        
+        double yCoord = NULL;
+        GEOSCoordSeq_getY(sequence, coord, &yCoord);
+        coords[coord] = CLLocationCoordinate2DMake(yCoord, xCoord);
+    }
+    geometry = [MKPolygon polygonWithCoordinates:coords count:numberOfCoords];
+    
+    GEOSCoordSeq_destroy(sequence);
+    
+    return self;
+}
+
+-(id)initWithGeosGeometry:(GEOSGeometry *)geom {
+    [super initWithGeosGeometry:geom];
+    GEOSCoordSequence *sequence = GEOSCoordSeq_clone(GEOSGeom_getCoordSeq(GEOSGetExteriorRing(geosGeom)));
+    GEOSCoordSeq_getSize(sequence, &numberOfCoords);
+    CLLocationCoordinate2D coords[numberOfCoords];
+    
+    for (int coord = 0; coord < numberOfCoords; coord++) {
+        double xCoord = NULL;
+        GEOSCoordSeq_getX(sequence, coord, &xCoord);
+        
+        double yCoord = NULL;
+        GEOSCoordSeq_getY(sequence, coord, &yCoord);
+        coords[coord] = CLLocationCoordinate2DMake(yCoord, xCoord);
+    }
+    geometry = [MKPolygon polygonWithCoordinates:coords count:numberOfCoords];
+    
     GEOSCoordSeq_destroy(sequence);
     
     return self;

@@ -36,14 +36,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Create a point geometry and put it on the map
+    // Create some geometries and add them to the map view
     GeoKitPoint *myPoint = [[GeoKitPoint alloc] initWithWKT:@"POINT(0 0)"];
     myPoint.geometry.title = @"0 0";
     myPoint.geometry.subtitle = @"Next to the most awesome place in the world";
     [theMap addAnnotation:myPoint.geometry];
     
     // Create a polygon and see if it contains the point
-    GeoKitGeometry *polygon = [[GeoKitGeometry alloc] initWithWKT:@"POLYGON((-1 -1, -1 1, 1 1, 1 -1, -1 -1))"];
+    GeoKitPolygon *polygon = [[GeoKitPolygon alloc] initWithWKT:@"POLYGON((-1 -1, -1 1, 1 1, 1 -1, -1 -1))"];
+    polygon.geometry.title = @"foo";
+    [theMap addOverlay:polygon.geometry];
     if ([polygon contains:myPoint]) {
         NSLog(@"Contains");
     } else {
@@ -51,8 +53,7 @@
     }
     
     GeoKitPolyline *line = [[GeoKitPolyline alloc] initWithWKT:@"LINESTRING(0 0, 10 10, 2 2, 4 4, 3 3, 4 5)"];
-    [theMap addOverlay:line.geometry];
-    
+    [theMap addOverlay:line.geometry];    
     
     [myPoint release];
     [polygon release];
@@ -101,6 +102,7 @@
         MKPolygonView *polygonView = [[[MKPolygonView alloc] initWithOverlay:overlay] autorelease];
         polygonView.strokeColor = [UIColor redColor];
         polygonView.lineWidth = 5.0;
+        polygonView.fillColor = [UIColor blueColor];
         
         return polygonView;
     }
