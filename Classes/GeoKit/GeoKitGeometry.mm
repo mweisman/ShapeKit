@@ -31,17 +31,27 @@
 
 -(id)initWithWKT:(NSString *) wkt {
     [self init];
-    geosGeom = GEOSGeomFromWKT([wkt UTF8String]);
+    
+    GEOSWKTReader *WKTReader = GEOSWKTReader_create();
+    self.geosGeom = GEOSWKTReader_read(WKTReader, [wkt UTF8String]);
+    GEOSWKTReader_destroy(WKTReader);
+    
     self.geomType = [NSString stringWithUTF8String:GEOSGeomType(geosGeom)];
-    self.wktGeom = [NSString stringWithUTF8String:GEOSGeomToWKT(geosGeom)];
+    
+    GEOSWKTWriter *WKTWriter = GEOSWKTWriter_create();
+    self.wktGeom = [NSString stringWithUTF8String:GEOSWKTWriter_write(WKTWriter,geosGeom)];
+    GEOSWKTWriter_destroy(WKTWriter);
     
     return self;
 }
 
+
 -(id)initWithGeosGeometry:(GEOSGeometry *)geom {
     geosGeom = geom;
     self.geomType = [NSString stringWithUTF8String:GEOSGeomType(geosGeom)];
-    self.wktGeom = [NSString stringWithUTF8String:GEOSGeomToWKT(geosGeom)];
+    GEOSWKTWriter *WKTWriter = GEOSWKTWriter_create();
+    self.wktGeom = [NSString stringWithUTF8String:GEOSWKTWriter_write(WKTWriter,geosGeom)];
+    GEOSWKTWriter_destroy(WKTWriter);
     
     return self;    
 }
