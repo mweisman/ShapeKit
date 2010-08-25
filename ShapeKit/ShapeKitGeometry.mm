@@ -66,12 +66,6 @@
     [super dealloc];
 }
 
-#pragma mark GEOS binary predicates
--(BOOL)contains:(ShapeKitGeometry *)compareGeometry {
-    BOOL contains = GEOSContains(geosGeom, compareGeometry.geosGeom);
-    return contains;
-}
-
 #pragma mark GEOS init functions
 void notice(const char *fmt,...) {
 	va_list ap;

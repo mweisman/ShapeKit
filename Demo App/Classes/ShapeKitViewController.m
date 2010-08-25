@@ -42,14 +42,63 @@
     myPoint.geometry.subtitle = @"Next to the most awesome place in the world";
     [theMap addAnnotation:myPoint.geometry];
     
-    // Create a polygon and see if it contains the point
+    // Create a polygon and run it through the predicates with the point
     ShapeKitPolygon *polygon = [[ShapeKitPolygon alloc] initWithWKT:@"POLYGON((-1 -1, -1 1, 1 1, 1 -1, -1 -1))"];
     polygon.geometry.title = @"foo";
     [theMap addOverlay:polygon.geometry];
-    if ([polygon contains:myPoint]) {
+    
+    if ([polygon isDisjointFromGeometry:myPoint]) {
+        NSLog(@"Disjoined");
+    } else {
+        NSLog(@"Not Disjoined");
+    }
+    
+    if ([polygon touchesGeometry:myPoint]) {
+        NSLog(@"Touches");
+    } else {
+        NSLog(@"Does not Touch");
+    }
+    
+    if ([polygon intersectsGeometry:myPoint]) {
+        NSLog(@"Intersects");
+    } else {
+        NSLog(@"No Intersect");
+    }
+    
+    if ([polygon crossesGeometry:myPoint]) {
+        NSLog(@"Crosses");
+    } else {
+        NSLog(@"Does not Cross");
+    }
+    
+    if ([polygon isWithinGeometry:myPoint]) {
+        NSLog(@"Within");
+    } else {
+        NSLog(@"Not Within");
+    }
+    
+    if ([polygon containsGeometry:myPoint]) {
         NSLog(@"Contains");
     } else {
-        NSLog(@"NO");
+        NSLog(@"Does not Contain");
+    }
+    
+    if ([polygon overlapsGeometry:myPoint]) {
+        NSLog(@"Overlaps");
+    } else {
+        NSLog(@"Does Not Overlap");
+    }
+    
+    if ([polygon isEqualToGeometry:myPoint]) {
+        NSLog(@"Equals");
+    } else {
+        NSLog(@"Does Not Equal");
+    }
+    
+    if ([polygon isRelatedToGeometry:myPoint WithRelatePattern:@"*********"]) {
+        NSLog(@"Related with Pattern");
+    } else {
+        NSLog(@"Not Related with Pattern");
     }
     
     ShapeKitPolyline *line = [[ShapeKitPolyline alloc] initWithWKT:@"LINESTRING(0 0, 10 10, 2 2, 4 4, 3 3, 4 5)"];

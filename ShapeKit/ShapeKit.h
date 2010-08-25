@@ -1,5 +1,5 @@
 //
-//  ShapeKitGeometry.m
+//  ShapeKit.h
 //  ShapeKit
 //
 //  Created by Michael Weisman on 10-08-24.
@@ -11,3 +11,4 @@
 //
 
 #import "ShapeKitGeometry.h"
+#import "ShapeKitGeometry+Predicates.h"

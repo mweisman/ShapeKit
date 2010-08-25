@@ -27,7 +27,6 @@
 
 -(id)initWithWKT:(NSString *) wkt;
 -(id)initWithGeosGeometry:(GEOSGeometry *)geom;
--(BOOL)contains:(ShapeKitGeometry *)compareGeometry;
 void notice(const char *fmt,...);
 void log_and_exit(const char *fmt,...);
 
