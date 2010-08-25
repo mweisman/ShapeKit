@@ -7,7 +7,7 @@
 //
 
 #import "ShapeKitViewController.h"
-#import "ShapeKitGeometry.h"
+#import "ShapeKit.h"
 
 @implementation ShapeKitViewController
 @synthesize theMap;
