@@ -12,3 +12,4 @@
 
 #import "ShapeKitGeometry.h"
 #import "ShapeKitGeometry+Predicates.h"
+#import "ShapeKitGeometry+Topology.h"

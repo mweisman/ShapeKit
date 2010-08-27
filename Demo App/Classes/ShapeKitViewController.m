@@ -100,9 +100,18 @@
     } else {
         NSLog(@"Not Related with Pattern");
     }
+    NSLog(@"Realtionship bewteen point and polygon: %@",[myPoint relationshipWithGeometry:polygon]);
     
     ShapeKitPolyline *line = [[ShapeKitPolyline alloc] initWithWKT:@"LINESTRING(0 0, 10 10, 2 2, 4 4, 3 3, 4 5)"];
-    [theMap addOverlay:line.geometry];    
+    [theMap addOverlay:line.geometry];
+    
+    [theMap addOverlay:[line envelope].geometry];
+    [theMap addOverlay:[line bufferWithWidth:0.5].geometry];
+    [theMap addOverlay:[line convexHull].geometry];
+    [theMap addAnnotation:[line pointOnSurface].geometry];
+    [theMap addAnnotation:[line centroid].geometry];
+
+    
     
     [myPoint release];
     [polygon release];
@@ -151,7 +160,7 @@
         MKPolygonView *polygonView = [[[MKPolygonView alloc] initWithOverlay:overlay] autorelease];
         polygonView.strokeColor = [UIColor redColor];
         polygonView.lineWidth = 5.0;
-        polygonView.fillColor = [UIColor blueColor];
+        polygonView.fillColor = [UIColor colorWithRed:0 green:0 blue:255 alpha:0.5];
         
         return polygonView;
     }
