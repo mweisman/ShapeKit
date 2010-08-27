@@ -87,7 +87,7 @@ void log_and_exit(const char *fmt,...) {
     vfprintf( stdout, fmt, ap);
     va_end(ap);
     fprintf( stdout, "\n" );
-	exit(1);
+//	exit(1);
 }
 
 @end
@@ -113,6 +113,24 @@ void log_and_exit(const char *fmt,...) {
         
     return self;
 }
+
+-(id)initWithGeosGeometry:(GEOSGeometry *)geom {
+    [super initWithGeosGeometry:geom];
+    GEOSCoordSequence *sequence = GEOSCoordSeq_clone(GEOSGeom_getCoordSeq(geosGeom));
+    geometry = [[MKPointAnnotation alloc] init];
+    double xCoord;
+    GEOSCoordSeq_getX(sequence, 0, &xCoord);
+    
+    double yCoord;
+    GEOSCoordSeq_getY(sequence, 0, &yCoord);
+    geometry.coordinate = CLLocationCoordinate2DMake(yCoord, xCoord);
+    
+    GEOSCoordSeq_getSize(sequence, &numberOfCoords);
+    GEOSCoordSeq_destroy(sequence);
+    
+    return self;
+}
+
 
 - (void) dealloc
 {
@@ -146,6 +164,28 @@ void log_and_exit(const char *fmt,...) {
     GEOSCoordSeq_destroy(sequence);
     
     return self;
+}
+
+-(id)initWithGeosGeometry:(GEOSGeometry *)geom {
+    [super initWithGeosGeometry:geom];
+    GEOSCoordSequence *sequence = GEOSCoordSeq_clone(GEOSGeom_getCoordSeq(geosGeom));
+    GEOSCoordSeq_getSize(sequence, &numberOfCoords);
+    CLLocationCoordinate2D coords[numberOfCoords];
+    
+    for (int coord = 0; coord < numberOfCoords; coord++) {
+        double xCoord = NULL;
+        GEOSCoordSeq_getX(sequence, coord, &xCoord);
+        
+        double yCoord = NULL;
+        GEOSCoordSeq_getY(sequence, coord, &yCoord);
+        coords[coord] = CLLocationCoordinate2DMake(yCoord, xCoord);
+    }
+    geometry = [MKPolyline polylineWithCoordinates:coords count:numberOfCoords];
+    
+    GEOSCoordSeq_destroy(sequence);
+    
+    return self;
+    
 }
 
 @end
