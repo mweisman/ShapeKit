@@ -228,6 +228,11 @@
 				HEADER_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/include";
 				INFOPLIST_FILE = "ShapeKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/lib";
+				OTHER_LDFLAGS = (
+					"-lgcc_eh",
+					"-cclib",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = ShapeKit;
 			};
 			name = Debug;
@@ -242,6 +247,11 @@
 				HEADER_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/include";
 				INFOPLIST_FILE = "ShapeKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/lib";
+				OTHER_LDFLAGS = (
+					"-lgcc_eh",
+					"-cclib",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = ShapeKit;
 				VALIDATE_PRODUCT = YES;
 			};

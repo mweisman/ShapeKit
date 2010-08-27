@@ -6,7 +6,7 @@ ShapeKit is a geometry library for iOS that aims to bridge [GEOS](http://trac.os
 
 ShapeKit uses the MKShape Geometries (MKPolygon, MKPointAnnotation, MKPolyline) which were added to MapKit in iOS 4.0. It has been tested on the iPhone, and will most likely just work on the iPad when iOS 4 is released for it.
 
-ShapeKit depends on GEOS. There is a build script in GEOS which will automate building the library for both ARM and x86 (simulator) and will copy the libraries and headers to ~/Developer. To use it, [download GEOS](http://download.osgeo.org/geos/geos-3.2.2.tar.bz2) and copy the build script to the geos source directory. Then simply run `sh build_ios device && make clean && build_ios simulator` to install the libraries and headers to ~/Developer. Next, drag one copy each of libgeos.a and libgeos_c.a to the Frameworks folder in your project's Xcode window. Finally, double-click on the project's Target and in the Build tab of the Info window that pops up, add `$(HOME)/$(SDK_DIR)/include` to the Header Search Path, and `$(HOME)/$(SDK_DIR)/lib` to the Library Search Path. Now Xcode should be able to find the GEOS library.
+ShapeKit depends on GEOS. There is a build script in GEOS which will automate building the library for both ARM and x86 (simulator) and will copy the libraries and headers to ~/Developer. To use it, [download GEOS](http://download.osgeo.org/geos/geos-3.2.2.tar.bz2) and copy the build script to the geos source directory. Then simply run `sh build_ios device && make clean && sh build_ios simulator` to install the libraries and headers to ~/Developer. Next, drag one copy each of libgeos.a and libgeos_c.a to the Frameworks folder in your project's Xcode window. Finally, double-click on the project's Target and in the Build tab of the Info window that pops up, add `$(HOME)/$(SDK_DIR)/include` to the Header Search Path, and `$(HOME)/$(SDK_DIR)/lib` to the Library Search Path. Now Xcode should be able to find the GEOS library. Finally, in the Other Linker Flags build setting, add "-lgcc_eh -cclib -lstc++" to link with the necessary libraries.
 
 ## Features
 
@@ -32,7 +32,7 @@ ShapeKit depends on GEOS. There is a build script in GEOS which will automate bu
 
 	`ShapeKitGeometry *polygon = [[ShapeKitGeometry alloc] initWithWKT:@"POLYGON((-1 -1, -1 1, 1 1, 1 -1, -1 -1))"];`
 	
-	`[polygon contains:myPoint] \\ Returns YES`
+	`[polygon containsGeometry:myPoint] \\ Returns YES`
 
 ## Usage
 
