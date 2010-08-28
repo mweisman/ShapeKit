@@ -3,7 +3,10 @@
 //  ShapeKit
 //
 //  Created by Michael Weisman on 10-08-26.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+// * This is free software; you can redistribute and/or modify it under
+// the terms of the GNU Lesser General Public Licence as published
+// by the Free Software Foundation. 
+// See the COPYING file for more information.
 //
 
 #import <Foundation/Foundation.h>
