@@ -37,13 +37,23 @@
     [super viewDidLoad];
     
     // Create some geometries and add them to the map view
-    ShapeKitPoint *myPoint = [[ShapeKitPoint alloc] initWithWKT:@"POINT(0 0)"];
+    ShapeKitPoint *myPoint = [[ShapeKitPoint alloc] initWithCoordinate:CLLocationCoordinate2DMake(49.283592, -123.104997)];
     myPoint.geometry.title = @"0 0";
     myPoint.geometry.subtitle = @"Next to the most awesome place in the world";
     [theMap addAnnotation:myPoint.geometry];
     
     // Create a polygon and run it through the predicates with the point
-    ShapeKitPolygon *polygon = [[ShapeKitPolygon alloc] initWithWKT:@"POLYGON((-1 -1, -1 1, 1 1, 1 -1, -1 -1))"];
+    //ShapeKitPolygon *polygon = [[ShapeKitPolygon alloc] initWithWKT:@"POLYGON((-1 -1, -1 1, 1 1, 1 -1, -1 -1))"];
+    CLLocationCoordinate2D polyCoords[7];
+    polyCoords[0] = CLLocationCoordinate2DMake(49.283894529188,-123.102176803645);
+    polyCoords[1] = CLLocationCoordinate2DMake(49.282388289451,-123.102213028432);
+    polyCoords[2] = CLLocationCoordinate2DMake(49.2824077667387,-123.103291100283);
+    polyCoords[3] = CLLocationCoordinate2DMake(49.2838335164225,-123.1034755758);
+    polyCoords[4] = CLLocationCoordinate2DMake(49.2838684091301,-123.103369232099);
+    polyCoords[5] = CLLocationCoordinate2DMake(49.2838634036584,-123.102745005068);
+    polyCoords[6] = CLLocationCoordinate2DMake(49.283894529188,-123.102176803645);
+    ShapeKitPolygon *polygon = [[ShapeKitPolygon alloc] initWithCoordinates:polyCoords count:7];
+    
     polygon.geometry.title = @"foo";
     [theMap addOverlay:polygon.geometry];
     
@@ -102,20 +112,28 @@
     }
     NSLog(@"Realtionship bewteen point and polygon: %@",[myPoint relationshipWithGeometry:polygon]);
     
-    ShapeKitPolyline *line = [[ShapeKitPolyline alloc] initWithWKT:@"LINESTRING(0 0, 10 10, 2 2, 4 4, 3 3, 4 5)"];
+    // Make a Polyline
+    CLLocationCoordinate2D coords[5];
+    coords[0] = CLLocationCoordinate2DMake(49.283245,-123.105370);
+    coords[1] = CLLocationCoordinate2DMake(49.283485,-123.106674);
+    coords[2] = CLLocationCoordinate2DMake(49.281200,-123.107620);
+    coords[3] = CLLocationCoordinate2DMake(49.278542,-123.107796);
+    coords[4] = CLLocationCoordinate2DMake(49.279720,-123.109703);
+    ShapeKitPolyline *line = [[ShapeKitPolyline alloc] initWithCoordinates:coords count:5];
     [theMap addOverlay:line.geometry];
     
     [theMap addOverlay:[line envelope].geometry];
-    [theMap addOverlay:[line bufferWithWidth:0.5].geometry];
+    [theMap addOverlay:[line bufferWithWidth:0.005].geometry];
     [theMap addOverlay:[line convexHull].geometry];
     [theMap addAnnotation:[line pointOnSurface].geometry];
     [theMap addAnnotation:[line centroid].geometry];
+     
 
     
     
     [myPoint release];
-    [polygon release];
-    [line release];
+    //[polygon release];
+    //[line release];
 }
 
 

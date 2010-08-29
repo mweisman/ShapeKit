@@ -39,6 +39,7 @@ void log_and_exit(const char *fmt,...);
 }
 @property (nonatomic,retain) MKPointAnnotation *geometry;
 @property (nonatomic) unsigned int numberOfCoords;
+-(id)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
 
 @end
 
@@ -49,6 +50,7 @@ void log_and_exit(const char *fmt,...);
 }
 @property (nonatomic,retain) MKPolyline *geometry;
 @property (nonatomic) unsigned int numberOfCoords;
+-(id)initWithCoordinates:(CLLocationCoordinate2D[])coordinates count:(unsigned int)count;
 
 @end
 

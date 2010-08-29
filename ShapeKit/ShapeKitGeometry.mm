@@ -56,7 +56,6 @@
     return self;    
 }
 
-
 - (void) dealloc
 {
     [geomType release];
@@ -131,6 +130,24 @@ void log_and_exit(const char *fmt,...) {
     return self;
 }
 
+-(id)initWithCoordinate:(CLLocationCoordinate2D)coordinate {
+    [super init];
+    GEOSCoordSequence *seq = GEOSCoordSeq_create(1,2);
+    GEOSCoordSeq_setX(seq, coordinate.longitude, 0);
+    GEOSCoordSeq_setY(seq, coordinate.latitude, 0);
+    self.geosGeom = GEOSGeom_createPoint(seq);
+
+    // TODO: Move the destroy into the dealloc method
+    // GEOSCoordSeq_destroy(seq);
+    geometry = [[MKPointAnnotation alloc] init];
+    geometry.coordinate = coordinate;
+    
+    GEOSWKTWriter *WKTWriter = GEOSWKTWriter_create();
+    self.wktGeom = [NSString stringWithUTF8String:GEOSWKTWriter_write(WKTWriter,geosGeom)];
+    GEOSWKTWriter_destroy(WKTWriter);
+    
+    return self;
+}
 
 - (void) dealloc
 {
@@ -188,6 +205,27 @@ void log_and_exit(const char *fmt,...) {
     
 }
 
+-(id)initWithCoordinates:(CLLocationCoordinate2D[])coordinates count:(unsigned int)count{
+    [super init];
+    GEOSCoordSequence *seq = GEOSCoordSeq_create(count,2);
+    
+    for (int i = 0; i < count; i++) {
+        GEOSCoordSeq_setX(seq, i, coordinates[i].longitude);
+        GEOSCoordSeq_setY(seq, i, coordinates[i].latitude);
+    }
+    self.geosGeom = GEOSGeom_createLineString(seq);
+    
+    // TODO: Move the destroy into the dealloc method
+    // GEOSCoordSeq_destroy(seq);
+    geometry = [MKPolyline polylineWithCoordinates:coordinates count:count];
+    
+    GEOSWKTWriter *WKTWriter = GEOSWKTWriter_create();
+    self.wktGeom = [NSString stringWithUTF8String:GEOSWKTWriter_write(WKTWriter,geosGeom)];
+    GEOSWKTWriter_destroy(WKTWriter);
+    
+    return self;
+}
+
 @end
 
 #pragma mark -
@@ -235,6 +273,29 @@ void log_and_exit(const char *fmt,...) {
     GEOSCoordSeq_destroy(sequence);
     
     return self;
+}
+
+-(id)initWithCoordinates:(CLLocationCoordinate2D[])coordinates count:(unsigned int)count {
+    [super init];
+    GEOSCoordSequence *seq = GEOSCoordSeq_create(count,2);
+    
+    for (int i = 0; i < count; i++) {
+        GEOSCoordSeq_setX(seq, i, coordinates[i].longitude);
+        GEOSCoordSeq_setY(seq, i, coordinates[i].latitude);
+    }
+    GEOSGeometry *ring = GEOSGeom_createLinearRing(seq);
+    self.geosGeom = GEOSGeom_createPolygon(ring, NULL, 0);
+    
+    // TODO: Move the destroy into the dealloc method
+    // GEOSCoordSeq_destroy(seq);
+    geometry = [MKPolygon polygonWithCoordinates:coordinates count:count];
+    
+    GEOSWKTWriter *WKTWriter = GEOSWKTWriter_create();
+    self.wktGeom = [NSString stringWithUTF8String:GEOSWKTWriter_write(WKTWriter,geosGeom)];
+    GEOSWKTWriter_destroy(WKTWriter);
+    
+    return self;
+    
 }
 
 @end
