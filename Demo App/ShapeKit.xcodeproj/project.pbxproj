@@ -231,6 +231,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShapeKit_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/include";
 				INFOPLIST_FILE = "ShapeKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/lib";
@@ -246,6 +247,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShapeKit_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/include";
 				INFOPLIST_FILE = "ShapeKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/lib";
