@@ -226,6 +226,12 @@ void log_and_exit(const char *fmt,...) {
     return self;
 }
 
+- (void) dealloc
+{
+    [geometry release];
+    [super dealloc];
+}
+
 @end
 
 #pragma mark -
@@ -296,6 +302,12 @@ void log_and_exit(const char *fmt,...) {
     
     return self;
     
+}
+
+- (void) dealloc
+{
+    [geometry release];
+    [super dealloc];
 }
 
 @end
