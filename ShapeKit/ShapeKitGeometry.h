@@ -19,6 +19,7 @@
     NSString *wktGeom;
     NSString *geomType;
     GEOSGeometry *geosGeom;
+    GEOSContextHandle_t handle;
 }
 
 @property (nonatomic,retain) NSString *wktGeom;
