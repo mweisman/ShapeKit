@@ -132,8 +132,8 @@
     
     
     [myPoint release];
-    //[polygon release];
-    //[line release];
+    [polygon release];
+    [line release];
 }
 
 
