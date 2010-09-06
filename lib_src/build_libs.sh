@@ -1,20 +1,20 @@
 #!/usr/bin/sh
 
-#echo "Downlaoding GEOS source..."
-#curl -O "http://download.osgeo.org/geos/geos-3.2.2.tar.bz2"
+echo "Downlaoding GEOS source..."
+curl -O "http://download.osgeo.org/geos/geos-3.2.2.tar.bz2"
 
-#echo "Unpacking GEOS source..."
-#tar jxf geos-3.2.2.tar.bz2
+echo "Unpacking GEOS source..."
+tar jxf geos-3.2.2.tar.bz2
 
-#echo "Copying build script to GEOS source directory..."
-#cp build_ios geos-3.2.2
+echo "Copying build script to GEOS source directory..."
+cp build_ios geos-3.2.2
 
-#echo "Building GEOS..."
-#cd geos-3.2.2
-#sh build_ios device
-#make clean
-#sh build_ios simulator
-#cd ..
+echo "Building GEOS..."
+cd geos-3.2.2
+sh build_ios device
+make clean
+sh build_ios simulator
+cd ..
 
 echo "Downloading PROJ4 source..."
 curl -O http://download.osgeo.org/proj/proj-4.7.0.tar.gz
