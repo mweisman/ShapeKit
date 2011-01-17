@@ -83,7 +83,7 @@ shift
 case $target in
 
     device )
-	arch=armv6
+	arch=armv7
 	platform=iPhoneOS
 	extra_cflags="-m${thumb_opt:-no-thumb} -mthumb-interwork"
 	;;
