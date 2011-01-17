@@ -167,6 +167,7 @@
 
 
 - (void)dealloc {
+	[theMap release];
     [super dealloc];
 }
 

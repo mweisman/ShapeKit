@@ -97,6 +97,8 @@
     if (proj != 0) {
         NSLog(@"%@",[NSString stringWithUTF8String:pj_strerrno(proj)]);
     }
+	pj_free(source);
+	pj_free(destination);
 }
 
 - (void) dealloc
