@@ -3,6 +3,8 @@
 *~.nib
 
 build/
+lib_src/geos*
+lib_src/proj*
 
 *.pbxuser
 *.perspective
