@@ -12,22 +12,28 @@
 
 #import <Foundation/Foundation.h>
 #import <geos_c.h>
+#import <proj_api.h>
 #import <MapKit/MapKit.h>
 
 
 @interface ShapeKitGeometry : NSObject {
     NSString *wktGeom;
     NSString *geomType;
+	NSString *projDefinition;
     GEOSGeometry *geosGeom;
     GEOSContextHandle_t handle;
+	unsigned int numberOfCoords;
 }
 
 @property (nonatomic,retain) NSString *wktGeom;
 @property (nonatomic,retain) NSString *geomType;
+@property (nonatomic,retain) NSString *projDefinition;
 @property (nonatomic) GEOSGeometry *geosGeom;
+@property (nonatomic) unsigned int numberOfCoords;
 
 -(id)initWithWKT:(NSString *) wkt;
 -(id)initWithGeosGeometry:(GEOSGeometry *)geom;
+-(void) reprojectTo:(NSString *)newProjectionDefinition;
 void notice(const char *fmt,...);
 void log_and_exit(const char *fmt,...);
 
@@ -36,10 +42,10 @@ void log_and_exit(const char *fmt,...);
 @interface ShapeKitPoint : ShapeKitGeometry
 {
     MKPointAnnotation *geometry;
-    unsigned int numberOfCoords;
+//    unsigned int numberOfCoords;
 }
 @property (nonatomic,retain) MKPointAnnotation *geometry;
-@property (nonatomic) unsigned int numberOfCoords;
+//@property (nonatomic) unsigned int numberOfCoords;
 -(id)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
 
 @end
@@ -47,10 +53,10 @@ void log_and_exit(const char *fmt,...);
 @interface ShapeKitPolyline : ShapeKitGeometry
 {
     MKPolyline *geometry;
-    unsigned int numberOfCoords;
+//    unsigned int numberOfCoords;
 }
 @property (nonatomic,retain) MKPolyline *geometry;
-@property (nonatomic) unsigned int numberOfCoords;
+//@property (nonatomic) unsigned int numberOfCoords;
 -(id)initWithCoordinates:(CLLocationCoordinate2D[])coordinates count:(unsigned int)count;
 
 @end
@@ -58,9 +64,9 @@ void log_and_exit(const char *fmt,...);
 @interface ShapeKitPolygon : ShapeKitGeometry
 {
     MKPolygon *geometry;
-    unsigned int numberOfCoords;
+//    unsigned int numberOfCoords;
 }
 @property (nonatomic,retain) MKPolygon *geometry;
-@property (nonatomic) unsigned int numberOfCoords;
+//@property (nonatomic) unsigned int numberOfCoords;
 
 @end

@@ -53,7 +53,7 @@
     polyCoords[5] = CLLocationCoordinate2DMake(49.2838634036584,-123.102745005068);
     polyCoords[6] = CLLocationCoordinate2DMake(49.283894529188,-123.102176803645);
     ShapeKitPolygon *polygon = [[ShapeKitPolygon alloc] initWithCoordinates:polyCoords count:7];
-    
+
     polygon.geometry.title = @"foo";
     [theMap addOverlay:polygon.geometry];
     
@@ -112,6 +112,8 @@
     }
     NSLog(@"Realtionship bewteen point and polygon: %@",[myPoint relationshipWithGeometry:polygon]);
     
+    NSLog(@"%@",polygon.geomType);
+    
     // Make a Polyline
     CLLocationCoordinate2D coords[5];
     coords[0] = CLLocationCoordinate2DMake(49.283245,-123.105370);
@@ -120,6 +122,11 @@
     coords[3] = CLLocationCoordinate2DMake(49.278542,-123.107796);
     coords[4] = CLLocationCoordinate2DMake(49.279720,-123.109703);
     ShapeKitPolyline *line = [[ShapeKitPolyline alloc] initWithCoordinates:coords count:5];
+	
+	// Reproject the line to Google Web Merc
+	line.projDefinition = @"+proj=latlong +datum=WGS84";
+	[line reprojectTo:@"+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"];	
+	
     [theMap addOverlay:line.geometry];
     
     [theMap addOverlay:[line envelope].geometry];
