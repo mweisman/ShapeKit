@@ -33,7 +33,7 @@ set -u
 
 
 default_gcc_version=4.2
-default_iphoneos_version=4.3
+default_iphoneos_version=4.2
 default_macos_version=10.6
 
 GCC_VERSION="${GCC_VERSION:-$default_gcc_version}"
