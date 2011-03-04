@@ -18,9 +18,9 @@
 		CE1415521321938600FA3325 /* libgeos_c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE14154F1321938600FA3325 /* libgeos_c.a */; };
 		CE1415531321938600FA3325 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1415501321938600FA3325 /* libgeos.a */; };
 		CE1415541321938600FA3325 /* libproj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1415511321938600FA3325 /* libproj.a */; };
-		CE27EB1D1223732800CDD743 /* ShapeKitGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE27EB1C1223732800CDD743 /* ShapeKitGeometry.mm */; };
-		CE27EC101224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m in Sources */ = {isa = PBXBuildFile; fileRef = CE27EC0F1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m */; };
-		CE5BD7E0122760820078FF08 /* ShapeKitGeometry+Topology.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD7DF122760820078FF08 /* ShapeKitGeometry+Topology.m */; };
+		CE14174213219E1400FA3325 /* ShapeKitGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE14173D13219E1400FA3325 /* ShapeKitGeometry.mm */; };
+		CE14174313219E1400FA3325 /* ShapeKitGeometry+Predicates.m in Sources */ = {isa = PBXBuildFile; fileRef = CE14173F13219E1400FA3325 /* ShapeKitGeometry+Predicates.m */; };
+		CE14174413219E1400FA3325 /* ShapeKitGeometry+Topology.m in Sources */ = {isa = PBXBuildFile; fileRef = CE14174113219E1400FA3325 /* ShapeKitGeometry+Topology.m */; };
 		CEAD6F281220BA3D0045AF2C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAD6F271220BA3D0045AF2C /* MapKit.framework */; };
 		CEAD6FAE1220C83C0045AF2C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAD6FAD1220C83C0045AF2C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -42,13 +42,13 @@
 		CE14154F1321938600FA3325 /* libgeos_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos_c.a; path = ../ShapeKit/libs/libgeos_c.a; sourceTree = "<group>"; };
 		CE1415501321938600FA3325 /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = ../ShapeKit/libs/libgeos.a; sourceTree = "<group>"; };
 		CE1415511321938600FA3325 /* libproj.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libproj.a; path = ../ShapeKit/libs/libproj.a; sourceTree = "<group>"; };
-		CE27EB1B1223732800CDD743 /* ShapeKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKitGeometry.h; sourceTree = "<group>"; };
-		CE27EB1C1223732800CDD743 /* ShapeKitGeometry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShapeKitGeometry.mm; sourceTree = "<group>"; };
-		CE27EBE31224B83600CDD743 /* ShapeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKit.h; sourceTree = "<group>"; };
-		CE27EC0E1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeKitGeometry+Predicates.h"; sourceTree = "<group>"; };
-		CE27EC0F1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShapeKitGeometry+Predicates.m"; sourceTree = "<group>"; };
-		CE5BD7DE122760820078FF08 /* ShapeKitGeometry+Topology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeKitGeometry+Topology.h"; sourceTree = "<group>"; };
-		CE5BD7DF122760820078FF08 /* ShapeKitGeometry+Topology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShapeKitGeometry+Topology.m"; sourceTree = "<group>"; };
+		CE14173B13219E1400FA3325 /* ShapeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShapeKit.h; path = ../../ShapeKit/ShapeKit.h; sourceTree = "<group>"; };
+		CE14173C13219E1400FA3325 /* ShapeKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShapeKitGeometry.h; path = ../../ShapeKit/ShapeKitGeometry.h; sourceTree = "<group>"; };
+		CE14173D13219E1400FA3325 /* ShapeKitGeometry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ShapeKitGeometry.mm; path = ../../ShapeKit/ShapeKitGeometry.mm; sourceTree = "<group>"; };
+		CE14173E13219E1400FA3325 /* ShapeKitGeometry+Predicates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ShapeKitGeometry+Predicates.h"; path = "../../ShapeKit/ShapeKitGeometry+Predicates.h"; sourceTree = "<group>"; };
+		CE14173F13219E1400FA3325 /* ShapeKitGeometry+Predicates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ShapeKitGeometry+Predicates.m"; path = "../../ShapeKit/ShapeKitGeometry+Predicates.m"; sourceTree = "<group>"; };
+		CE14174013219E1400FA3325 /* ShapeKitGeometry+Topology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ShapeKitGeometry+Topology.h"; path = "../../ShapeKit/ShapeKitGeometry+Topology.h"; sourceTree = "<group>"; };
+		CE14174113219E1400FA3325 /* ShapeKitGeometry+Topology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ShapeKitGeometry+Topology.m"; path = "../../ShapeKit/ShapeKitGeometry+Topology.m"; sourceTree = "<group>"; };
 		CEAD6F271220BA3D0045AF2C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEAD6FAD1220C83C0045AF2C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -75,7 +75,13 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CE27EB1A1223732800CDD743 /* ShapeKit */,
+				CE14173B13219E1400FA3325 /* ShapeKit.h */,
+				CE14173C13219E1400FA3325 /* ShapeKitGeometry.h */,
+				CE14173D13219E1400FA3325 /* ShapeKitGeometry.mm */,
+				CE14173E13219E1400FA3325 /* ShapeKitGeometry+Predicates.h */,
+				CE14173F13219E1400FA3325 /* ShapeKitGeometry+Predicates.m */,
+				CE14174013219E1400FA3325 /* ShapeKitGeometry+Topology.h */,
+				CE14174113219E1400FA3325 /* ShapeKitGeometry+Topology.m */,
 				1D3623240D0F684500981E51 /* ShapeKitAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ShapeKitAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* ShapeKitViewController.h */,
@@ -137,21 +143,6 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
-		};
-		CE27EB1A1223732800CDD743 /* ShapeKit */ = {
-			isa = PBXGroup;
-			children = (
-				CE27EBE31224B83600CDD743 /* ShapeKit.h */,
-				CE27EB1B1223732800CDD743 /* ShapeKitGeometry.h */,
-				CE27EB1C1223732800CDD743 /* ShapeKitGeometry.mm */,
-				CE27EC0E1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.h */,
-				CE27EC0F1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m */,
-				CE5BD7DE122760820078FF08 /* ShapeKitGeometry+Topology.h */,
-				CE5BD7DF122760820078FF08 /* ShapeKitGeometry+Topology.m */,
-			);
-			name = ShapeKit;
-			path = ../ShapeKit;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -217,9 +208,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ShapeKitAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ShapeKitViewController.m in Sources */,
-				CE27EB1D1223732800CDD743 /* ShapeKitGeometry.mm in Sources */,
-				CE27EC101224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m in Sources */,
-				CE5BD7E0122760820078FF08 /* ShapeKitGeometry+Topology.m in Sources */,
+				CE14174213219E1400FA3325 /* ShapeKitGeometry.mm in Sources */,
+				CE14174313219E1400FA3325 /* ShapeKitGeometry+Predicates.m in Sources */,
+				CE14174413219E1400FA3325 /* ShapeKitGeometry+Topology.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +222,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -246,10 +237,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../ShapeKit/libs\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ShapeKit-fsomwevczhomqhdadhrfpjhsbidf/Build/Products/Debug-iphonesimulator\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ShapeKit;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 i386";
 			};
@@ -260,7 +251,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShapeKit_Prefix.pch;
@@ -273,10 +264,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../ShapeKit/libs\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ShapeKit-fsomwevczhomqhdadhrfpjhsbidf/Build/Products/Debug-iphonesimulator\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ShapeKit;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 i386";
@@ -287,9 +278,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
@@ -305,9 +296,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
