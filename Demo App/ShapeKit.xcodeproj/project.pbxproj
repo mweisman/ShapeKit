@@ -15,12 +15,12 @@
 		2899E5220DE3E06400AC0155 /* ShapeKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ShapeKitViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ShapeKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ShapeKitViewController.m */; };
+		CE1415521321938600FA3325 /* libgeos_c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE14154F1321938600FA3325 /* libgeos_c.a */; };
+		CE1415531321938600FA3325 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1415501321938600FA3325 /* libgeos.a */; };
+		CE1415541321938600FA3325 /* libproj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1415511321938600FA3325 /* libproj.a */; };
 		CE27EB1D1223732800CDD743 /* ShapeKitGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE27EB1C1223732800CDD743 /* ShapeKitGeometry.mm */; };
 		CE27EC101224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m in Sources */ = {isa = PBXBuildFile; fileRef = CE27EC0F1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m */; };
-		CE48D8D512E0D4DA00872930 /* libproj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE48D8D412E0D4DA00872930 /* libproj.a */; };
 		CE5BD7E0122760820078FF08 /* ShapeKitGeometry+Topology.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD7DF122760820078FF08 /* ShapeKitGeometry+Topology.m */; };
-		CEAD6ED81220B62C0045AF2C /* libgeos_c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAD6ED71220B62C0045AF2C /* libgeos_c.a */; };
-		CEAD6EDA1220B62C0045AF2C /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAD6ED91220B62C0045AF2C /* libgeos.a */; };
 		CEAD6F281220BA3D0045AF2C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAD6F271220BA3D0045AF2C /* MapKit.framework */; };
 		CEAD6FAE1220C83C0045AF2C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAD6FAD1220C83C0045AF2C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -39,16 +39,16 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ShapeKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKit_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShapeKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShapeKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CE14154F1321938600FA3325 /* libgeos_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos_c.a; path = ../ShapeKit/libs/libgeos_c.a; sourceTree = "<group>"; };
+		CE1415501321938600FA3325 /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = ../ShapeKit/libs/libgeos.a; sourceTree = "<group>"; };
+		CE1415511321938600FA3325 /* libproj.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libproj.a; path = ../ShapeKit/libs/libproj.a; sourceTree = "<group>"; };
 		CE27EB1B1223732800CDD743 /* ShapeKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKitGeometry.h; sourceTree = "<group>"; };
 		CE27EB1C1223732800CDD743 /* ShapeKitGeometry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShapeKitGeometry.mm; sourceTree = "<group>"; };
 		CE27EBE31224B83600CDD743 /* ShapeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKit.h; sourceTree = "<group>"; };
 		CE27EC0E1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeKitGeometry+Predicates.h"; sourceTree = "<group>"; };
 		CE27EC0F1224BCBB00CDD743 /* ShapeKitGeometry+Predicates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShapeKitGeometry+Predicates.m"; sourceTree = "<group>"; };
-		CE48D8D412E0D4DA00872930 /* libproj.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libproj.a; path = ../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/lib/libproj.a; sourceTree = SOURCE_ROOT; };
 		CE5BD7DE122760820078FF08 /* ShapeKitGeometry+Topology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeKitGeometry+Topology.h"; sourceTree = "<group>"; };
 		CE5BD7DF122760820078FF08 /* ShapeKitGeometry+Topology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShapeKitGeometry+Topology.m"; sourceTree = "<group>"; };
-		CEAD6ED71220B62C0045AF2C /* libgeos_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos_c.a; path = /Users/mw/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/lib/libgeos_c.a; sourceTree = "<absolute>"; };
-		CEAD6ED91220B62C0045AF2C /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = /Users/mw/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/lib/libgeos.a; sourceTree = "<absolute>"; };
 		CEAD6F271220BA3D0045AF2C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEAD6FAD1220C83C0045AF2C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -58,14 +58,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1415521321938600FA3325 /* libgeos_c.a in Frameworks */,
+				CE1415531321938600FA3325 /* libgeos.a in Frameworks */,
+				CE1415541321938600FA3325 /* libproj.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				CEAD6ED81220B62C0045AF2C /* libgeos_c.a in Frameworks */,
-				CEAD6EDA1220B62C0045AF2C /* libgeos.a in Frameworks */,
 				CEAD6F281220BA3D0045AF2C /* MapKit.framework in Frameworks */,
 				CEAD6FAE1220C83C0045AF2C /* CoreLocation.framework in Frameworks */,
-				CE48D8D512E0D4DA00872930 /* libproj.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +126,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE14154F1321938600FA3325 /* libgeos_c.a */,
+				CE1415501321938600FA3325 /* libgeos.a */,
+				CE1415511321938600FA3325 /* libproj.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
-				CEAD6ED71220B62C0045AF2C /* libgeos_c.a */,
-				CEAD6ED91220B62C0045AF2C /* libgeos.a */,
-				CE48D8D412E0D4DA00872930 /* libproj.a */,
 				CEAD6F271220BA3D0045AF2C /* MapKit.framework */,
 				CEAD6FAD1220C83C0045AF2C /* CoreLocation.framework */,
 			);
@@ -229,7 +229,7 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -238,71 +238,85 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShapeKit_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/include";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ShapeKit/libs\"",
+				);
 				INFOPLIST_FILE = "ShapeKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
-					"$(HOME)/$(SDK_DIR)/lib",
-					"\"$(SRCROOT)/../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/lib\"",
+					"$(inherited)",
+					"\"$(SRCROOT)/../ShapeKit/libs\"",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ShapeKit;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 i386";
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShapeKit_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(HOME)/$(SDK_DIR)/include";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ShapeKit/libs\"",
+				);
 				INFOPLIST_FILE = "ShapeKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
-					"$(HOME)/$(SDK_DIR)/lib",
-					"\"$(SRCROOT)/../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/lib\"",
+					"$(inherited)",
+					"\"$(SRCROOT)/../ShapeKit/libs\"",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ShapeKit;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 i386";
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "i386 armv7";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "i386 armv7";
 			};
 			name = Release;
 		};
