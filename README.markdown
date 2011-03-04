@@ -4,9 +4,9 @@ ShapeKit is a geometry library for iOS that aims to bridge [GEOS](http://trac.os
 
 ## Requirements
 
-ShapeKit uses the MKShape Geometries (MKPolygon, MKPointAnnotation, MKPolyline) which were added to MapKit in iOS 4.0. It has been tested on the iPhone, and will most likely just work on the iPad when iOS 4 is released for it.
+ShapeKit uses the MKShape Geometries (MKPolygon, MKPointAnnotation, MKPolyline) which were added to MapKit in iOS 4.0. It has been tested on the iPhone and the iPad.
 
-ShapeKit depends on GEOS. There is a build script in lib\_src which will automate downloading and building the library for both ARM and x86 (simulator) and will copy the libraries and headers to ~/Developer. To use it, simply run the build\_libs.sh script in the lib\_src directory to install the libraries and headers to ~/Developer. Next, drag one copy each of libgeos.a and libgeos_c.a to the Frameworks folder in your project's Xcode window. Finally, double-click on the project's Target and in the Build tab of the Info window that pops up, add `$(HOME)/$(SDK_DIR)/include` to the Header Search Path, and `$(HOME)/$(SDK_DIR)/lib` to the Library Search Path. Now Xcode should be able to find the GEOS library.
+ShapeKit depends on [GEOS](http://trac.osgeo.org/geos/) and [PROJ](http://proj.osgeo.org/). There is a build script in lib\_src which will automate downloading and building universal libraries for both ARMv7 and x86 (simulator) and will copy the libraries and headers to the ShapeKit library directory. To use it, simply run the build\_libs.sh script in the lib\_src directory to install the libraries.
 
 ## Features
 
@@ -22,25 +22,17 @@ ShapeKit depends on GEOS. There is a build script in lib\_src which will automat
 
 	`[myMapKitView addAnnotation:myPoint.geometry]`
 
-* ShapeKitGeometries also have GEOS geometries for use with the GEOS C API
+* ShapeKit has spatial predicates and topology operations
 
-	`GEOSGeometry *bufferedPoint = GEOSBuffer(myPoint.geosGeom, 1, 0);`
+	`ShapeKitPolygon *bufferedPoint = [myPoint bufferWithWidth:0.005]`
 	
-	(NOTE: the plan is to eventually abstract the underlying GEOS functions away behind Objective-C wrappers)
-	
-* GEOS functions are abstracted into Objective-C methods that operate directly on ShapeKitGeometries
-
-	`ShapeKitPolygon *polygon = [[ShapeKitPolygon alloc] initWithWKT:@"POLYGON((-1 -1, -1 1, 1 1, 1 -1, -1 -1))"];`
-	
-	`[polygon containsGeometry:myPoint] \\ Returns YES`
+	`[bufferedPoint containsGeometry:myPoint] \\ Returns YES`
 
 ## Usage
 
-After following the instructions above to set up GEOS, simply drag the ShapeKit folder into Xcode. You will also need to add the CoreLocation and MapKit frameworks to your project. See the sample Xcode project for a simple example of a ShapeKit app.
+After following the instructions above to set up GEOS and PROJ copy the ShapeKit Directory into your project directory, and then drag everything except the libs directory into your Xcode project. Go to the Build Phases tab for your application's target (assuming Xcode 4 here) and expand "Link Binary with Libraries". Click the "+" button and select libgeos.a, libgeos_c.a and libproj.a from the ShapeKit/libs directory. This should add the libraries to your project and automatically set the Library Search Path to enable the linker to find the libraries. Under Xcode's  Build Settings tab, search for "search path". The Library Search Path should have been changed to something like "$(inherited) "$(SRCROOT)/../ShapeKit/libs"" pointing to ShapeKit's library directory. Copy and paste this into the Header Search Path.
 
-## Future
-
-The plan is to turn this into a more generic geo library for iOS with support for projections (through [PROJ4](http://trac.osgeo.org/proj/)) and vector data loading (though [OGR](http://www.gdal.org/ogr/)).
+You will also need to add the CoreLocation and MapKit frameworks to your project. See the sample Xcode project for a simple example of a ShapeKit app.
 
 ## License
 
